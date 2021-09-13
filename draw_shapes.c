@@ -13,7 +13,39 @@ void print_square(int leftCol, int size)
     putchar('\n');
   }
 }
-
+//Prints an arrow of size of a triangle and square together.
+void print_varrow(int leftCol, int size)
+{
+  int i = leftCol;
+  int j = size;
+  print_triangle(i, j);
+  print_square(i*2,j);
+}
+//Prints an arrow of a specified length of wing.
+void print_harrow(int size)
+{
+  int i,j,k;
+    for (i = -size; i <= size; i++)
+      {
+	k = i;
+	if(k < 0 )
+	  {
+	    k = k * -1;
+	  }
+	for (j = 0; j <= size; ++j)
+	  {
+	    if (j < k)
+	      {
+		printf("  "); //two spaces
+	      }
+	    else
+	      {
+		putchar('*');
+	      }
+	  }
+	putchar('\n');
+      }
+}
 // Prints a triangle of specified height whose left edge is at col leftCol.
 void print_triangle(int leftCol, int size)
 {
